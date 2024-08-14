@@ -1,23 +1,28 @@
 
+import { Link } from 'react-router-dom';
 import styles from './Post.module.css';
 
 export default function Post(props) {
 
 	return (
 
-		<div className={styles.post}>
+        <Link to={`/posts/${props.post.id}`}>
 
-            <img
-                className={styles.capa}
-                src={`/assets/posts/${props.post.id}/capa.png`}
-                alt="imagem de capa do post"
-            />
+            <div className={styles.post}>
 
-            <h2 className={styles.titulo}>{props.post.titulo}</h2>
+                <img
+                    className={styles.capa}
+                    src={`/assets/posts/${props.post.id}/capa.png`}
+                    alt="imagem de capa do post"
+                />
 
-            <button className={styles.botaoLer}>Ler</button>
+                <h2 className={styles.titulo}>{props.post.titulo}</h2>
 
-        </div>
+                <button className={styles.botaoLer}>Ler</button>
+
+            </div>
+
+        </Link>
 
 	);
 
